@@ -9,3 +9,30 @@ h2{
     font-family: monospace;
     font-size: 50px;
 }
+
+body{
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: rgb(190, 190, 190);
+}
+
+#game {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+}
+input, button {
+    padding: 8px 12px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+#output{
+    margin-top: 20px;
+    white-space: pre-line;
+}
+
+
+
+
+
