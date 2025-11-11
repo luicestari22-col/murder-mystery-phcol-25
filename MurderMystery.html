@@ -23,7 +23,7 @@
   <input type="text" id="Clue2Input" placeholder="Clue 2">
   <button onclick="checkClueTwo()">Submit</button>
 
-  <div id="output"></div>
+  <div id="output2"></div>
 
 </div>
   <div id="game">
@@ -31,7 +31,7 @@
   <input type="text" id="Clue3Input" placeholder="Clue 3">
   <button onclick="checkClueThree()">Submit</button>
 
-  <div id="output"></div>
+  <div id="output3"></div>
 
 </div>
 
@@ -39,6 +39,8 @@
   
   <script>
     const output = document.getElementById('output');
+    const output2 = document.getElementById('output2');
+    const output3 = document.getElementById('output3');
     function checkClueOne() {
       const inputclue = document.getElementById('Clue1Input').value.trim();
       output.textContent = "";
@@ -50,7 +52,7 @@
     }
     function checkClueTwo() {
       const inputclue = document.getElementById('Clue2Input').value.trim();
-      output.textContent = "";
+      output2.textContent = "";
       if (inputclue.toLowerCase() === "makes the"){
         output.textContent = "Success!";
       }else if (inputclue.toLowerCase() != "makes the"){
@@ -59,7 +61,7 @@
     }
         function checkClueThree() {
       const inputclue = document.getElementById('Clue3Input').value.trim();
-      output.textContent = "";
+      output3.textContent = "";
       if (inputclue.toLowerCase() === "money"){
         output.textContent = "Success!";
       }else if (inputclue.toLowerCase() != "money"){
