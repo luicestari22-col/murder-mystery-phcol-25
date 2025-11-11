@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Battle General Chungus</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+    #game {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+    }
+    input, button {
+      padding: 8px 12px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    #output {
+      margin-top: 20px;
+      white-space: pre-line; /* preserve line breaks */
+    }
+  </style>
+</head>
+<body>
+
+<div id="game">
+  <p>Battle General Chungus? Type "Yes" or "No":</p>
+  <input type="text" id="battleInput" placeholder="Yes or No">
+  <button onclick="checkBattle()">Submit</button>
+
+  <div id="output"></div>
+</div>
+
+<script>
+const output = document.getElementById('output');
+
+function checkBattle() {
+  const battle = document.getElementById('battleInput').value.trim();
+  output.textContent = ""; // clear previous messages
+
+  if (battle.toLowerCase() === "no") {
+    output.textContent = "You have failed your mission.";
+  } else if (battle.toLowerCase() === "yes") {
+    output.textContent = "You have engaged in a fight with Enemy 1.\n";
+
+    // delay the next message
+    setTimeout(() => {
+      output.textContent += "You have three attacks: Slash, Piercing Stab, and Pistol Shot.\n";
+      
+      // create a new text input for attack choice
+      const attackInput = document.createElement('input');
+      attackInput.type = 'text';
+      attackInput.placeholder = 'Type your attack here';
+      attackInput.id = 'attackInput';
+      
+      const attackBtn = document.createElement('button');
+      attackBtn.textContent = 'Attack';
+      attackBtn.onclick = performAttack;
+
+      output.appendChild(attackInput);
+      output.appendChild(attackBtn);
+    }, 1000);
+  } else {
+    output.textContent = 'Invalid input! Please type "Yes" or "No".';
+  }
+}
+
+function performAttack() {
+  const attack = document.getElementById('attackInput').value.trim();
+  // remove input and button
+  document.getElementById('attackInput').remove();
+  this.remove(); // removes the attack button
+
+  if (attack.toLowerCase() === "slash") {
+    output.textContent += "You slash at the General with your hidden blade but you miss, losing the fight!";
+  } else if (attack.toLowerCase() === "piercing stab") {
+    output.textContent += "You lunge forward and stab the General with precision!";
+  } else if (attack.toLowerCase() === "pistol shot") {
+    output.textContent += "You draw your pistol and fire a deadly shot!";
+  } else {
+    output.textContent += "You hesitate and miss your opportunity to attack!";
+  }
+}
+</script>
+
+</body>
+</html>
 
