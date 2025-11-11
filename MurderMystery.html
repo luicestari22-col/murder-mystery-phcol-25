@@ -16,12 +16,14 @@
 
   <div id="output"></div>
 
+</div>
+
   <script>
     const output = document.getElementById('output');
     function checkClueOne() {
       const inputclue = document.getElementById('Clue1Input').value.trim();
       output.textContent = "";
-      if (inputclue.toLowerCase() === "World go round"){
+      if (inputclue.toLowerCase() === "world go round"){
         output.textContent = "Success!";
       }else{
         output.textContnet = "Incorrect";
