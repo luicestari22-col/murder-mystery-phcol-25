@@ -1,38 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Poppins:wght@400;600&display=swap');
 
-h1{
-    font-size: 70px;
-    font-family: sans-serif;
-    text-shadow: -3px 3px 8px rgb(20, 20, 20);
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #2b2b2b, #111);
+  color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
 }
 
-h2{
-    font-family: monospace;
-    font-size: 50px;
+h1 {
+  font-family: 'Creepster', cursive;
+  font-size: 3.5rem;
+  color: #ff4747;
+  margin-bottom: 0;
+  text-shadow: 0 0 20px #ff4747;
 }
 
-body{
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    background-color: rgb(190, 190, 190);
+h2 {
+  margin-top: 0.2rem;
+  font-weight: 500;
+  color: #ffb347;
 }
 
 #game {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 600px;
-}
-input, button {
-    padding: 8px 12px;
-    font-size: 16px;
-    margin-top: 10px;
-}
-#output{
-    margin-top: 20px;
-    white-space: pre-line;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  animation: fadeIn 0.6s ease;
 }
 
+p {
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.4em;
+}
 
+input[type="text"] {
+  display: block;
+  width: 80%;
+  margin: 15px auto;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-align: center;
+}
 
+button {
+  display: block;
+  margin: 0 auto;
+  background: #ff4747;
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
 
+button:hover {
+  background: #ff6666;
+  transform: scale(1.05);
+}
 
+#output, #output2, #output3 {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 15px;
+  min-height: 24px;
+}
+
+.success {
+  color: #00ff9c;
+}
+
+.incorrect {
+  color: #ff4747;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.gif-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gif-container img {
+  width: 250px;
+  margin-top: 15px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
