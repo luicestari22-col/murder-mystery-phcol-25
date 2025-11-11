@@ -1,74 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  
-<link rel="stylesheet" href="style.css">
-<title>Murder Mystery Science Week</title>
+  <title>Murder Mystery Science Week</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<center><h1>Murder Mystery</h1><h2>Science week</h2></center>
+  <h1>Murder Mystery</h1>
+  <h2>Science Week</h2>
 
-<div id="game">
-  <p>The envelope is hidden in Ms Master's room, Input the clue below.</p>
-  <input type="text" id="Clue1Input" placeholder="Clue 1">
-  <button onclick="checkClueOne()">Submit</button>
-
-  <div id="output"></div>
-
-</div>
-
-<div id="game">
-  <p>This clue is hidden in the only room with a vehicle hanging on the wall.</p>
-  <input type="text" id="Clue2Input" placeholder="Clue 2">
-  <button onclick="checkClueTwo()">Submit</button>
-
-  <div id="output2"></div>
-
-</div>
   <div id="game">
-  <p>This room contains a large ammount of keyboards.</p>
-  <input type="text" id="Clue3Input" placeholder="Clue 3">
-  <button onclick="checkClueThree()">Submit</button>
+    <p>There is an envelope hidden in Ms Master's room, go and find it then enter the clue below.</p>
+    <input type="text" id="ClueInput" placeholder="Clue 1">
+    <button onclick="checkClueOne()">Submit</button>
+    <div id="output"></div>
+  </div>
 
-  <div id="output3"></div>
-
-</div>
-
-
-  
   <script>
-    const output = document.getElementById('output');
-    const output2 = document.getElementById('output2');
-    const output3 = document.getElementById('output3');
+    const formClue2 = `
+      <p>This clue is hidden in the only room with a vehicle hanging on the wall.</p>
+      <input type="text" id="Clue2Input" placeholder="Clue 2">
+      <button onclick="checkClueTwo()">Submit</button>
+      <div id="output2"></div>
+    `;
+
+    const formClue3 = `
+      <p>This room contains a large amount of keyboards.</p>
+      <input type="text" id="Clue3Input" placeholder="Clue 3">
+      <button onclick="checkClueThree()">Submit</button>
+      <div id="output3"></div>
+    `;
+
+    const victory = `
+      <div class="gif-container">
+        <p>🎉 Congratulations, you’ve solved the 2025 Murder Mystery! 🎉</p>
+        <img src="https://media.giphy.com/media/111ebonMs90YLu/giphy.gif" alt="Confetti celebration">
+      </div>
+    `;
+
     function checkClueOne() {
-      const inputclue = document.getElementById('Clue1Input').value.trim();
+      const input = document.getElementById('ClueInput').value.trim().toLowerCase();
+      const output = document.getElementById('output');
       output.textContent = "";
-      if (inputclue.toLowerCase() === "world go round"){
-        output.textContent = "Success!";
-      }else if (inputclue.toLowerCase() != "world go round"){
-        output.textContnet = "Incorrect.";
+      if (input === "world go round") {
+        output.innerHTML = `<span class="success">Correct!</span>`;
+        setTimeout(() => {
+          document.getElementById('game').innerHTML = formClue2;
+        }, 600);
+      } else {
+        output.innerHTML = `<span class="incorrect">Incorrect, try again!</span>`;
       }
     }
+
     function checkClueTwo() {
-      const inputclue = document.getElementById('Clue2Input').value.trim();
+      const input = document.getElementById('Clue2Input').value.trim().toLowerCase();
+      const output2 = document.getElementById('output2');
       output2.textContent = "";
-      if (inputclue.toLowerCase() === "makes the"){
-        output2.textContent = "Success!";
-      }else if (inputclue.toLowerCase() != "makes the"){
-        output2.textContnet = "Incorrect.";
+      if (input === "makes the") {
+        output2.innerHTML = `<span class="success">Correct!</span>`;
+        setTimeout(() => {
+          document.getElementById('game').innerHTML = formClue3;
+        }, 600);
+      } else {
+        output2.innerHTML = `<span class="incorrect">Incorrect, try again!</span>`;
       }
     }
-        function checkClueThree() {
-      const inputclue = document.getElementById('Clue3Input').value.trim();
+
+    function checkClueThree() {
+      const input = document.getElementById('Clue3Input').value.trim().toLowerCase();
+      const output3 = document.getElementById('output3');
       output3.textContent = "";
-      if (inputclue.toLowerCase() === "money"){
-        output3.textContent = "Success!";
-      }else if (inputclue.toLowerCase() != "money"){
-        output3.textContnet = "Incorrect.";
+      if (input === "money") {
+        output3.innerHTML = `<span class="success">Correct!</span>`;
+        setTimeout(() => {
+          document.getElementById('game').innerHTML = victory;
+        }, 600);
+      } else {
+        output3.innerHTML = `<span class="incorrect">Incorrect, try again!</span>`;
       }
     }
   </script>
-  
 </body>
 </html>
