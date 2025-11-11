@@ -1,12 +1,9 @@
-.momo-trust-display-regular {
-  font-family: "Momo Trust Display", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
+
 
 h1{
     font-size: 70px;
-    font-family: "Momo Trust Display", sans-serif;
+    font-family: sans-serif;
+    text-shadow: 3px 3px 5px #777777;
 }
 
 h2{
