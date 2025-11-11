@@ -18,6 +18,16 @@
 
 </div>
 
+<div id="game">
+  <p>The envelope is hidden in Ms Master's room, Input the clue below.</p>
+  <input type="text" id="Clue2Input" placeholder="Clue 2">
+  <button onclick="checkClueOne()">Submit</button>
+
+  <div id="output"></div>
+
+</div>
+
+  
   <script>
     const output = document.getElementById('output');
     function checkClueOne() {
@@ -25,8 +35,8 @@
       output.textContent = "";
       if (inputclue.toLowerCase() === "world go round"){
         output.textContent = "Success!";
-      }else{
-        output.textContnet = "Incorrect";
+      }else if (inputclue.toLowerCase() != "world go round"){
+        output.textContnet = "Incorrect.";
       }
     }
   </script>
