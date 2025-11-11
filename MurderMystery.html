@@ -19,13 +19,22 @@
 </div>
 
 <div id="game">
-  <p>clue 2 placeholder text. Wait a minute for this to be complete.</p>
+  <p>This clue is hidden in the only room with a vehicle hanging on the wall.</p>
   <input type="text" id="Clue2Input" placeholder="Clue 2">
-  <button onclick="checkClueOne()">Submit</button>
+  <button onclick="checkClueTwo()">Submit</button>
 
   <div id="output"></div>
 
 </div>
+  <div id="game">
+  <p>This room contains a large ammount of keyboards.</p>
+  <input type="text" id="Clue3Input" placeholder="Clue 3">
+  <button onclick="checkClueThree()">Submit</button>
+
+  <div id="output"></div>
+
+</div>
+
 
   
   <script>
@@ -36,6 +45,24 @@
       if (inputclue.toLowerCase() === "world go round"){
         output.textContent = "Success!";
       }else if (inputclue.toLowerCase() != "world go round"){
+        output.textContnet = "Incorrect.";
+      }
+    }
+    function checkClueTwo() {
+      const inputclue = document.getElementById('Clue2Input').value.trim();
+      output.textContent = "";
+      if (inputclue.toLowerCase() === "makes the"){
+        output.textContent = "Success!";
+      }else if (inputclue.toLowerCase() != "makes the"){
+        output.textContnet = "Incorrect.";
+      }
+    }
+        function checkClueThree() {
+      const inputclue = document.getElementById('Clue3Input').value.trim();
+      output.textContent = "";
+      if (inputclue.toLowerCase() === "money"){
+        output.textContent = "Success!";
+      }else if (inputclue.toLowerCase() != "money"){
         output.textContnet = "Incorrect.";
       }
     }
